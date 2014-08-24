@@ -10,13 +10,13 @@
 					if ( is_day() ) :
 						printf( __( 'Daily Archives: %s' ), '<span>' . get_the_date() . '</span>' );
 					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentytwelve' ) ) . '</span>' );
+						printf( __( 'Monthly Archives: %s' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format' ) ) . '</span>' );
 					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentytwelve' ) ) . '</span>' );
+						printf( __( 'Yearly Archives: %s' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format' ) ) . '</span>' );
 					elseif ( is_category() ) :
 						printf( __( 'Category Archives: %s' ), '<span>' . single_cat_title( '', false ) . '</span>' ); 
 					else :
-						_e( 'Archives', 'twentytwelve' );
+						_e( 'Archives' );
 					endif;
 				?></h2>
 			</header>
