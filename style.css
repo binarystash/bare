@@ -155,6 +155,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 	float:left;
 }
 
+#primary.without-sidebar {
+	width:100%;
+	float:none;
+}
+
 #secondary {
 	width:300px;
 	float:right;
