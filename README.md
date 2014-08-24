@@ -1,6 +1,6 @@
 # Barebone Wordpress Theme
 
-Barebone is a theme for building Wordpress themes. Because of its minimal footprint, you can focus on your coding your design without reading complex documentation.
+Barebone is a theme for building Wordpress themes. Because of its minimal footprint, you can focus on coding your design without reading complex documentation.
 
 ## Features
 
