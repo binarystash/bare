@@ -290,6 +290,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 	width: 50%;
 }
 
+form input[type='text'],
+form input[type='password'],
+form input[type='email'],
+form input[type='number'],
+form input[type='tel'],
+form input[type='url'],
+form textarea,
+form select {
+	border:0;
+	max-width:98%;
+	border:1px solid gray;
+}
+
+.comment-form-comment > * {
+	vertical-align:middle;
+}
+
 /*
  * IV. Custom styles
  */
