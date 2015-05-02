@@ -1,8 +1,13 @@
 /*
 Theme Name: Barebone Wordpress Theme
+Theme URI: http://github.com/binarystash/bare
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 1.0
+Description: A bare Wordpress theme suitable for web developers
+Author: BinaryStash
+Author URI: http://www.binarystash.com
+Version: 2015.05.02
+Tags: two-columns, right-sidebar
 */
 
 /*
@@ -142,16 +147,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 
 .outer {
 	width:100%;
-	min-width:960px;
 }
 
 .inner {
-	width:960px;
+	max-width:960px;
 	margin:auto;
 }
 
 #primary {
-	width:620px;
+	width:70%;
 	float:left;
 }
 
@@ -161,7 +165,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 }
 
 #secondary {
-	width:300px;
+	width:27%;
 	float:right;
 }
 
@@ -234,36 +238,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
  * D. Media
  */
 
-#primary img.alignleft{
+.alignleft{
 	float:left;
 }
 
-#primary img.alignright{
+.alignright{
 	float:right;
 }
 
-#primary img.aligncenter {
+.aligncenter {
 	display:block;
 	margin-left:auto !important;
 	margin-right:auto !important;
 }
 
-#primary img[class*="align"],
-#primary img[class*="wp-image-"],
-#primary img[class*="attachment-"],
-#primary img.size-full,
-#primary img.size-large,
-#primary img.header-image,
-#primary img.wp-post-image {
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"],
+img.size-full,
+img.size-large,
+img.header-image,
+img.wp-post-image {
 	max-width: 98%;
 	margin:0 1%;
 	height:auto;
 }
 
-#primary embed,
-#primary iframe,
-#primary object,
-#primary video {
+embed,
+iframe,
+object,
+video {
 	max-width: 100%;
 }
 
@@ -271,24 +275,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
  * E. Content formatting
  */
 
-#primary pre {
-	overflow:auto;
-}
-
-#primary div {
-	max-width:100%;
-}
-
-#primary .nav-previous{
+.nav-previous{
 	float: left;
 	width: 50%;
 }
 
-#primary .nav-next {
+.nav-next {
 	float: right;
 	text-align: right;
 	width: 50%;
 }
+
+.wp-caption {
+	text-align:center
+}
+
+.wp-caption-text {}
+
+.sticky {}
+
+.gallery-caption {}
+
+.bypostauthor {}
 
 form input[type='text'],
 form input[type='password'],
@@ -303,7 +311,7 @@ form select {
 	border:1px solid gray;
 }
 
-.comment-form-comment > * {
+.comment-form-comment > * { 
 	vertical-align:middle;
 }
 
@@ -316,6 +324,13 @@ form select {
  * V. Media queries
  */
 
-@media only screen and (max-width:977px) {
+@media only screen and (max-width:768px) {
+
+	#primary,
+	#secondary {
+		width:100%;
+		float:none;
+		margin-bottom:20px;
+	}
 
 }

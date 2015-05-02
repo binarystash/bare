@@ -22,38 +22,17 @@ add_action( 'after_setup_theme', 'barebone_setup' );
  */
 function barebone_load_assets() {
 	wp_enqueue_script('jquery');
-	wp_enqueue_script('crossbrowserselector', get_bloginfo('stylesheet_directory')."/js/css_browser_selector.js");
-	wp_enqueue_script('scripts', get_bloginfo('stylesheet_directory')."/js/scripts.js");
+	wp_enqueue_script('crossbrowserselector', get_stylesheet_directory_uri()."/js/css_browser_selector.js");
+	wp_enqueue_script('scripts', get_stylesheet_directory_uri()."/js/scripts.js");
 
-	wp_enqueue_style( 'twentytwelve-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'barebone-theme-style', get_stylesheet_uri() );
 }
 
 add_action( 'wp_enqueue_scripts', 'barebone_load_assets' );
 
-/*
- * Set up shortcodes
+/**
+ * Allow shortcodes on yext widgets
  */
-
-function barebone_blog_url() {
-	return get_bloginfo("url");
-}
-
-function barebone_stylesheet_directory() {
-	return get_bloginfo("stylesheet_directory");
-}
-
-function barebone_nav($atts) {
-	ob_start();
-	wp_nav_menu($atts);
-	$output = ob_get_contents();
-	ob_end_clean();
-	
-	return $output;
-}
-
-add_shortcode('blog_url', 'barebone_blog_url');
-add_shortcode('stylesheet_directory', 'barebone_stylesheet_directory'); 
-add_shortcode('wp_nav_menu', 'barebone_nav'); 
 add_filter('widget_text', 'do_shortcode');
 
 /**
@@ -102,3 +81,26 @@ function barebone_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'barebone_wp_title', 10, 2 );
+
+/**
+ * Set default content width
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 960;
+}
+
+/**
+ * Add theme support for auto feed links
+ */
+add_theme_support( 'automatic-feed-links' );
+
+/**
+ * Add theme support for post thumbnails
+ */
+add_theme_support( "post-thumbnails" );
+
+/*
+ * Allows the user to change the page title
+ */
+add_theme_support( "title-tag" );
+

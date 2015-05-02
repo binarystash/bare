@@ -6,6 +6,8 @@
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
+				<div <?php post_class() ?>>
+
 				<header class="entry-header">
 					<h1 class="entry-title"><?php the_title() ?></h1>
 				</header>
@@ -13,6 +15,8 @@
 				<div class="entry-content">
 					<?php the_content() ?>
 				</div>
+				
+				 <?php the_tags() ?>
 
 				<?php if ( comments_open() ) : ?>
 					<div class="comments-link">
@@ -21,6 +25,8 @@
 				<?php endif; ?>
 
 				<?php comments_template( '', true ); ?>
+
+				</div>
 
 			<?php endwhile ?>
 

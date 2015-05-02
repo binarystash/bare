@@ -8,15 +8,15 @@
 				<h2 class="archive-title"><?php
 
 					if ( is_day() ) :
-						printf( __( 'Daily Archives: %s' ), '<span>' . get_the_date() . '</span>' );
+						printf( 'Daily Archives: %s', '<span>' . get_the_date() . '</span>' );
 					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format' ) ) . '</span>' );
+						printf( 'Monthly Archives: %s', '<span>' . get_the_date( 'F Y monthly archives date format' ) . '</span>' );
 					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format' ) ) . '</span>' );
+						printf( 'Yearly Archives: %s', '<span>' . get_the_date( 'Y yearly archives date format' ) . '</span>' );
 					elseif ( is_category() ) :
-						printf( __( 'Category Archives: %s' ), '<span>' . single_cat_title( '', false ) . '</span>' ); 
+						printf( 'Category Archives: %s', '<span>' . single_cat_title( '', false ) . '</span>' ); 
 					else :
-						_e( 'Archives' );
+						'Archives';
 					endif;
 				?></h2>
 			</header>
@@ -27,6 +27,8 @@
 					the_post_thumbnail();
 				endif; ?>
 				
+				<div <?php post_class() ?>>
+				
 				<header class="entry-header">
 					<h1 class="entry-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h1>
 				</header>
@@ -34,6 +36,8 @@
 				<div class="entry-content">
 					<?php the_content() ?>
 				</div>
+
+				<?php the_tags() ?>
 
 				<?php if ( comments_open() ) : ?>
 					<div class="comments-link">
@@ -43,12 +47,11 @@
 
 				<?php comments_template( '', true ); ?>
 
+				</div>
+
 			<?php endwhile ?>
 
-			<div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
-			<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
-			<div class="clear"></div>
-
+		<?php wp_link_pages( $args ); ?>
 
 		<?php else: ?>
 

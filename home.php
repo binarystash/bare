@@ -8,6 +8,8 @@
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
+						<div <?php post_class() ?>>
+
 						<header class="entry-header">
 							<h2 class="entry-title"><?php the_title() ?></h2>
 						</header>
@@ -23,6 +25,8 @@
 						<?php endif; ?>
 
 						<?php comments_template( '', true ); ?>
+
+						</div>
 
 					<?php endwhile ?>
 
