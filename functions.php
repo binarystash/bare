@@ -54,35 +54,6 @@ function barebone_widgets() {
 add_action( 'widgets_init', 'barebone_widgets' );
 
 /**
- * Format the page title
- *
- * @param string $title Default title text
- * @param string $sep Separator
- * @return string Formatted title
- */
-function barebone_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name', 'display' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . max( $paged, $page );
-
-	return $title;
-}
-add_filter( 'wp_title', 'barebone_wp_title', 10, 2 );
-
-/**
  * Set default content width
  */
 if ( ! isset( $content_width ) ) {
@@ -103,4 +74,3 @@ add_theme_support( "post-thumbnails" );
  * Allows the user to change the page title
  */
 add_theme_support( "title-tag" );
-
