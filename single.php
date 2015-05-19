@@ -29,7 +29,9 @@
 				</div>
 
 			<?php endwhile ?>
-
+			
+			<?php wp_link_pages(); ?>
+			
 		<?php else: ?>
 
 			<header class="entry-header">

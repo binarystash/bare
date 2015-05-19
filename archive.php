@@ -51,7 +51,7 @@
 
 			<?php endwhile ?>
 
-		<?php wp_link_pages( $args ); ?>
+		<?php posts_nav_link(); ?>
 
 		<?php else: ?>
 
